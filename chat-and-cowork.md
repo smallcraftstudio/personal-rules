@@ -7,8 +7,9 @@ don't have to re-paste the whole rules file every time `GLOBAL.md` changes.
 ## What to paste
 
 Paste the block below into:
-- **Claude.ai chat**: Settings → Personalization → "What personal preferences should Claude consider in responses?"
-- **Cowork**: memory entry / preferences UI
+- **Claude.ai chat**: click your initials (lower-left corner) → **Settings** → field labeled **"Instructions for Claude"**.
+  Verified against [Anthropic's help center](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features).
+- **Cowork**: memory entry / preferences UI (exact path not verified — varies by Cowork version).
 
 ```
 Personal global rules — Jared Randall
