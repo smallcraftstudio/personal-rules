@@ -1,21 +1,41 @@
 # Paste-ready text for Claude.ai chat and Cowork
 
-The contents of `GLOBAL.md` work as-is for Claude.ai chat (Personalization) and Cowork (memory). Just open `GLOBAL.md`, copy everything from the first heading down, and paste into the relevant settings UI.
+These interfaces don't auto-fetch from GitHub on session start, but they may
+honor a "fetch this URL first" instruction. We bet on that approach so we
+don't have to re-paste the whole rules file every time `GLOBAL.md` changes.
 
-## Where to paste
+## What to paste
 
-### Claude.ai chat
-Settings → Personalization → "What personal preferences should Claude consider in responses?"
-Paste the `GLOBAL.md` contents.
+Paste the block below into:
+- **Claude.ai chat**: Settings → Personalization → "What personal preferences should Claude consider in responses?"
+- **Cowork**: memory entry / preferences UI
 
-### Cowork
-Open Cowork's memory / preferences UI (varies by version) and add a new memory entry with the `GLOBAL.md` contents.
+```
+Personal global rules — Jared Randall
 
-## When to update
+At the start of every conversation with me, please fetch and follow
+the rules at:
 
-Whenever `GLOBAL.md` changes:
-1. Run `./sync.sh` to update Claude Code interfaces.
-2. Re-paste `GLOBAL.md` contents into Claude.ai Personalization.
-3. Re-paste `GLOBAL.md` contents into Cowork memory.
+  https://raw.githubusercontent.com/smallcraftstudio/personal-rules/main/GLOBAL.md
 
-(Yes, this is manual for chat and Cowork. Those interfaces can't fetch from GitHub on their own, so a one-time paste per update is unavoidable until they support that.)
+That URL is the canonical source of my personal global rules and may
+have been updated since this instruction was last pasted. Apply
+whatever rules are currently in it.
+
+If you cannot fetch URLs in this interface, default behavior:
+never present a URL or citation to me as verified unless you actually
+fetched the page in this session and confirmed it contains what
+you're claiming. Otherwise, mark it as [unchecked] and say you
+didn't verify it.
+```
+
+## Why this approach
+
+- The rules in `GLOBAL.md` change occasionally. Pasting the rules themselves means re-pasting on every change. Pasting a "fetch this URL" instruction means the rules update automatically (assuming the model fetches the URL).
+- Claude.ai chat with web access **should** be able to fetch the raw GitHub URL on each conversation start. It's a public file, no auth needed.
+- Cowork's web-fetch capabilities vary; if it can't fetch, it falls back to the inline rule about marking `[unchecked]`.
+- If a model ignores the fetch instruction, that's a product problem — bug report territory rather than a workflow problem.
+
+## When you change the rules
+
+Just edit `GLOBAL.md`, run `./sync.sh`, commit + push. **No re-paste needed for chat/Cowork** — they'll pick up the change next conversation (provided they actually honor the fetch instruction).

@@ -22,11 +22,17 @@ The Claude Code interfaces (CLI, Desktop, web at claude.ai/code, mobile) read co
 
 The script is idempotent: re-running it after editing `GLOBAL.md` updates every embedded copy in place.
 
-Claude.ai chat and Cowork can't read GitHub files automatically, so for those you paste `chat-and-cowork.md` into their respective settings (Personalization for chat, memory for Cowork) once, and re-paste when the rules change.
+For Claude.ai chat and Cowork, paste a **fetch-first instruction** (see `chat-and-cowork.md`) into their settings/memory UI. Those interfaces should then fetch the canonical raw URL each conversation, picking up changes automatically without needing a re-paste. This is the bet — if a particular interface doesn't honor "fetch X first" instructions, that's something for the product team to fix; the rules still apply via the inline fallback in the pasted instruction.
+
+The canonical raw URL Claude.ai and Cowork should fetch:
+
+```
+https://raw.githubusercontent.com/smallcraftstudio/personal-rules/main/GLOBAL.md
+```
 
 ## Workflow when adding/changing a rule
 
 1. Edit `GLOBAL.md`.
-2. Run `./sync.sh`.
+2. Run `./sync.sh` (updates the global CLAUDE.md and every project CLAUDE.md on this machine).
 3. Commit and push this repo and any project repos that got updated.
-4. Update Claude.ai chat Personalization and Cowork memory by re-pasting `chat-and-cowork.md`.
+4. Done. Claude.ai chat and Cowork will pick up the change on the next conversation via the fetch instruction — no re-paste needed.
