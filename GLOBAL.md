@@ -66,4 +66,40 @@ My time is more expensive than your tool calls. Don't ask me to validate your as
 
 ---
 
+## Document format defaults (Cowork)
+
+When creating a general-purpose document — note, brief, report, working
+draft, research summary, memo, one-pager — default to:
+
+1. **`.md` as source of truth.** Write to the working folder. This is what
+   gets edited, version-controlled, shared as a file, and exported.
+2. **Live Artifact as default preview/sharing view** for any doc that
+   contains images or external links. Use `mcp__cowork__create_artifact`
+   on first publish and `mcp__cowork__update_artifact` thereafter so each
+   iteration is versioned. Keep `.md` and Live Artifact in sync —
+   regenerate the artifact whenever the `.md` changes. For docs with no
+   images and no links worth clicking, the `.md` alone is enough.
+3. **Render the Live Artifact minimally** — basic headings, paragraphs,
+   lists, inline base64 images, normal links. No cover pages, headers,
+   footers, page numbers, fancy branding, or decorative layouts unless
+   explicitly asked.
+
+Use other formats only when the user explicitly asks or the deliverable
+inherently requires it: `.docx` for Word/legal workflows, `.pdf` for
+stakeholder distribution, `.pptx` for slide decks, `.xlsx` for
+spreadsheets and financial models.
+
+Reason (tested 2026-05-18 in Cowork preview): Live Artifact is the only
+Cowork-native preview format where both inline images and clickable
+external links work. `.md` preview can't render relative-path images;
+`.html` / `.docx` / `.pdf` preview render images but make external links
+inert. The hybrid `.md`-source + Live-Artifact-preview pattern keeps
+clean diffs *and* a rich preview experience.
+
+Note: Live Artifacts are local to a single device and not yet shareable
+per Anthropic's docs. For external sharing, fall back to the `.md`
+source file or export to PDF.
+
+---
+
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
