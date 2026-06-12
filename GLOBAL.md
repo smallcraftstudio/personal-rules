@@ -66,6 +66,12 @@ My time is more expensive than your tool calls. Don't ask me to validate your as
 
 ---
 
+## Prove new approaches with simple test objects first
+
+When attempting something unfamiliar through programmatic APIs — especially visual/spatial operations (video editing, UI layout, hardware displays, coordinate systems) — first prove the concept works using visually trivial test objects (solid color rectangles, basic shapes, dummy data). Only move to real content (video clips, images, production data) after the simple test passes. A solid color is either in the right place or it isn't; a complex video clip leaves you guessing whether the problem is your code or the content. This catches wrong assumptions, incorrect parameter names, and API bugs early when the result is unambiguous.
+
+---
+
 ## Document format defaults (Cowork)
 
 When creating a general-purpose document — note, brief, report, working
@@ -99,6 +105,30 @@ clean diffs *and* a rich preview experience.
 Note: Live Artifacts are local to a single device and not yet shareable
 per Anthropic's docs. For external sharing, fall back to the `.md`
 source file or export to PDF.
+
+---
+
+## Always link to docs you create or edit
+
+When you create or edit a document — `.md` file, Google Doc, Quip doc,
+spreadsheet, slide deck, anything — include a clickable link to it in
+your chat response so I can open it without hunting through a file
+browser.
+
+**What counts as a link:**
+- **Local files (Claude Code / Desktop):** A file path I can click or
+  copy. Example: `C:\Users\jrandall\Documents\GitHub\j-halo\conops.md`
+- **Google Docs:** The full `https://docs.google.com/document/d/...` URL
+- **GitHub:** The repo URL or direct file link on GitHub
+- **Any cloud doc:** The sharing/view URL
+
+**When to include it:**
+- Every time you create a new file — link it in the message confirming
+  creation
+- Every time you edit an existing file — link the file you edited
+- If you create or edit multiple files in one turn, link each one
+
+Don't make me go find what you just touched. Surface it.
 
 ---
 
