@@ -27,6 +27,7 @@ TARGETS=(
   "$GITHUB_DIR/j-testing/CLAUDE.md"
   "$GITHUB_DIR/j-rpi-pico-experiments/CLAUDE.md"
   "$GITHUB_DIR/jared solidworks experiments/CLAUDE.md"
+  "$GITHUB_DIR/j-halo/CLAUDE.md"
 )
 
 # Use Python for the multi-line marker-aware replacement (more reliable than sed)

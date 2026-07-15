@@ -72,6 +72,14 @@ When attempting something unfamiliar through programmatic APIs — especially vi
 
 ---
 
+## Preserve aspect ratio — never stretch icons, symbols, or images
+
+When resizing any visual asset — icons, symbols, photographs, illustrations, logos — always scale uniformly (both axes equally). Never distort proportions to fit a container. If an element needs to fit a non-square space, resize to fit within the bounds while maintaining aspect ratio, then center it. This applies everywhere: design tools (Figma, Sketch), code (Compose, CSS, SwiftUI), video editing, hardware displays.
+
+Stretched icons and images look broken and undermine visual quality immediately. There is no context where distorting proportions is the right call.
+
+---
+
 ## Document format defaults (Cowork)
 
 When creating a general-purpose document — note, brief, report, working
@@ -131,5 +139,29 @@ browser.
 Don't make me go find what you just touched. Surface it.
 
 ---
+
+## When I say "never again," capture it as a permanent rule
+
+When I express frustration that you repeated a mistake or must never repeat one — phrasings like
+"don't make me tell you again," "don't ever make this mistake again," "never do this again," "how
+many times do I have to tell you," "stop doing X," "I shouldn't have to repeat this," "never again,"
+or any equivalent — treat it as an instruction to record a **permanent, broadly-worded rule**, not
+just to fix the current instance.
+
+Do this:
+
+1. **Generalize hard.** Rewrite my specific complaint as the widest principle that's still true —
+   widen the domain (this app → any app, and writing/research/design/video/anywhere), the object
+   class (e.g. "a custom icon" → any asset: icon, symbol, clip art, stock photo, illustration), and
+   the action. Example: *"don't make a custom icon when one exists in a common library"* becomes
+   *"before creating any asset from scratch, check whether a suitable one already exists in a common
+   library/source and reuse it — every project, every medium."* A rule that only fixes the one
+   instance I complained about has failed.
+2. **Write it into my canonical rules** so it applies in every future chat: add it to this file
+   (`personal-rules/GLOBAL.md`), or — only if it truly can't generalize past one project — to that
+   project's `CLAUDE.md`. Don't ask me to approve the wording; just do it and report what you wrote.
+3. **In Claude Code / desktop**, the `never-again` skill handles this automatically and does the
+   file edit, `sync.sh`, and commit/push in a separate session. On web / mobile / Cowork, do the
+   generalization inline and give me the exact rule text + where it belongs so it gets committed.
 
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
