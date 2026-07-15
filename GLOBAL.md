@@ -164,4 +164,27 @@ Do this:
    file edit, `sync.sh`, and commit/push in a separate session. On web / mobile / Cowork, do the
    generalization inline and give me the exact rule text + where it belongs so it gets committed.
 
+---
+
+## Reuse existing assets — don't reinvent what already exists
+
+Before creating **any** asset from scratch — an icon, symbol, glyph, clip art, stock photo,
+illustration, logo, sound effect, code snippet, template, component, or any other reusable
+artifact — first check whether a suitable one already exists in a commonly available library or
+source, and reuse it. Don't hand-build or reinvent something when a ready-made version will do
+the job.
+
+- **Icons/symbols:** use the platform's standard set (e.g. Material Symbols for Android/Compose,
+  SF Symbols for Apple, established icon fonts/libraries for web) — do not draw your own vectors
+  (a custom "list" path, an eye made from an ellipse + a dot, etc.) when a named symbol exists
+  (`subject`, `visibility`, and the like).
+- **Everything else:** same principle — search the relevant library/source first (component
+  libraries, stock/asset catalogs, standard code utilities, existing project components) and pull
+  the existing one in.
+
+Applies to **every project and every medium** — Figma, Android/Compose, web, video, design,
+writing, code. Only build something custom when it's clear that **no** commonly available asset
+will do the job, **or** I've specifically asked you to spend time creating custom artwork. When
+in doubt, reuse; don't make me remind you again to use existing assets when they're available.
+
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
