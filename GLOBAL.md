@@ -187,4 +187,37 @@ writing, code. Only build something custom when it's clear that **no** commonly 
 will do the job, **or** I've specifically asked you to spend time creating custom artwork. When
 in doubt, reuse; don't make me remind you again to use existing assets when they're available.
 
+---
+
+## Pin the model on anything that runs without me
+
+When creating anything that will execute later or repeatedly **without me in the loop** — a
+scheduled task, routine, cron job, automation, Cowork task, sub-agent, hook, or whatever the
+current tool happens to call it (these names and their UI locations change constantly, so treat
+this rule as naming a *category*, not a specific feature) — do all three of the following:
+
+**1. Ask me which model to use, before creating it.** Name the realistic options and recommend
+one sized to the actual work: a cheap fast model for mechanical jobs (run a script, move files,
+post a summary, check a status), a stronger one where the task genuinely needs judgment. Don't
+silently inherit whatever the session default happens to be at creation time.
+
+**2. Encode the model in the task's own definition, not in a session or global setting.** A task
+created today may run months from now in a session whose default has changed — and changing a
+*global* default to control one task is the wrong lever, because it re-prices all my interactive
+work too. The model belongs with the task.
+
+**3. Verify it actually took.** After creating, trigger one run and read back the model the run
+really used. Don't assume the key was honored. Do the same for effort level where the tool
+supports one.
+
+**Where to encode it:** check the definition *file* the tool writes, not just the tool's API
+surface — the file often supports keys the creation tool doesn't expose as parameters. Verified
+example (2026-09-16): `create_scheduled_task` has no model parameter, but adding
+`model: claude-haiku-4-5-20251001` to the YAML frontmatter of the `SKILL.md` it writes under
+`~/.claude/scheduled-tasks/<task-id>/` **is** honored — confirmed by reading the resulting run's
+session metadata.
+
+If no per-task mechanism exists at all, say so plainly and tell me what the task will inherit,
+rather than quietly letting it default.
+
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
