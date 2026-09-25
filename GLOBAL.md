@@ -52,6 +52,29 @@ Unverified links and citations have rarely worked for me when details matter, an
 
 ---
 
+## Cite a document's current home, not a stale copy
+
+When a document has moved, cite and link the new copy, not the old one it moved away from. At work the main case is **Quip → Google Drive**. The same applies to Confluence or an old wiki → Drive, a deprecated docs page → its replacement, an archived repo → its successor. The old copy is still a fine source when it's the only copy, or when its dated content really is newer than the new one.
+
+**Before citing or linking any Quip doc** (or any doc on a platform being migrated away from):
+
+1. **Check the top of the doc for a pointer**: "[Migrated]" in the title, "Migrated to Google", "moved to", "replacement", "archived", or a doc that's nothing but a link. If there is one, open the new copy, confirm it's the same doc, and cite that. If there are several pointers, check each and use the one that's actually maintained. Some tools strip hyperlinks, so a pointer can arrive without its link; then search for the title.
+2. **No pointer? Search the new location for the exact title anyway.** Migration tools usually keep titles. Search the new location *directly*: an enterprise search tool may not index it, and a search that only returns the old copy proves nothing.
+3. **Judge "current" by dated content inside each copy** (status rows, "as of" dates, change logs), not by last-modified time. If the new copy is also stale, keep going to the live source (latest MBR, weekly flash, program review).
+4. **This covers everything you give me**: chat answers, reading lists, files you write, docs you create, messages you draft.
+
+**How to present it:**
+
+- Links to the current home (e.g. Google Drive) need no extra commentary.
+- Every Quip link you give me must say, right next to the link, why it's Quip instead of something newer. Use one of:
+  - `(Quip-only: no Google version found)`
+  - `(Quip is newer: <what's newer; the Google copy was last updated <date>>)`
+- Never put "this doc has moved to Google" or "the Quip page links to the newer version" next to a Quip link. Writing that sentence means you should have swapped the link.
+
+In Claude Code on my machine, a hook (`~/.claude/hooks/quip_successor.py`) flags migrated Quip docs as tool results arrive and blocks a final answer that links one. Treat its messages as this rule, not as noise.
+
+---
+
 ## Exhaust your own tools before asking me to do your work
 
 Before telling me you "can't" do something, or asking me to check/verify/look up something for you, exhaust the tools available to you in the current interface. This includes web_fetch, web search, Claude in Chrome, conversation search, MCP connectors, bash tools, and anything else available in context.
