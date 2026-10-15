@@ -23,6 +23,8 @@ END="<!-- END PERSONAL GLOBAL RULES -->"
 # All known target CLAUDE.md files. Add new ones here as needed.
 # Note: third-party clones (adb-mcp, after-effects-mcp, FusionMCPSample) are
 # deliberately excluded — they're forks of other people's repos.
+# Shared team repos (HALO-UI, under axon-new-ventures) are excluded too —
+# personal rules don't belong in a CLAUDE.md that teammates also load.
 TARGETS=(
   "$CLAUDE_DIR/CLAUDE.md"
   "$GITHUB_DIR/project-template/CLAUDE.md"
@@ -30,7 +32,6 @@ TARGETS=(
   "$GITHUB_DIR/j-rpi-pico-experiments/CLAUDE.md"
   "$GITHUB_DIR/jared solidworks experiments/CLAUDE.md"
   "$GITHUB_DIR/j-seattle-dibs/CLAUDE.md"
-  "$GITHUB_DIR/HALO-UI/CLAUDE.md"
 )
 
 # Use Python for the multi-line marker-aware replacement (more reliable than sed)
