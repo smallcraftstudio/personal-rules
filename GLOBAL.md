@@ -103,6 +103,18 @@ Stretched icons and images look broken and undermine visual quality immediately.
 
 ---
 
+## Exported images get an opaque background
+
+Any image exported as a file — diagrams, charts, schematics, plots, screenshots, annotated images, in PNG and SVG alike — must sit on a solid background with good contrast against its content (white for dark linework), with a small margin around the content.
+
+Keep transparency only for assets meant to be layered over something else: logos, icons, overlays, sprites. When you keep transparency, say so.
+
+Verify before delivering: every pixel of a PNG should have alpha 255. For SVG, check for a full-size background rect (or equivalent fill) behind the content.
+
+Why: transparent PNGs are invisible in dark-themed viewers (e.g. the Claude desktop app's file viewer) and hard to read in the Windows default photo viewer. Library-specific switches (matplotlib, schemdraw, Pillow, Plotly, Graphviz) are in `G:\My Drive\Notes\AI Collab\Design\general-design-practices.md`, section "Opaque Backgrounds on Exported Images".
+
+---
+
 ## Document format defaults (Cowork)
 
 When creating a general-purpose document — note, brief, report, working
