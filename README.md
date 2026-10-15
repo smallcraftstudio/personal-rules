@@ -35,4 +35,6 @@ https://raw.githubusercontent.com/smallcraftstudio/personal-rules/main/GLOBAL.md
 1. Edit `GLOBAL.md`.
 2. Run `./sync.sh` (updates the global CLAUDE.md and every project CLAUDE.md on this machine).
 3. Commit and push this repo and any project repos that got updated.
+   This repo lives under the `smallcraftstudio` GitHub account, while the project repos are under `jrandall_axoncorp` (the usual active `gh` account). Pushing here with the work account returns a 403. Switch accounts just for the push:
+   `gh auth switch -u smallcraftstudio && git push origin main; gh auth switch -u jrandall_axoncorp`
 4. Done. Claude.ai chat and Cowork will pick up the change on the next conversation via the fetch instruction — no re-paste needed.
