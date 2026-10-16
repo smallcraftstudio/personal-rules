@@ -285,3 +285,15 @@ working on the right thing. Pairs with "Multiple-choice questions get buttons" i
 `~/.claude/CLAUDE.md` (buttons going out, read-back coming in).
 
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
+
+---
+
+## Building any site or app: start from a shared design system and component library
+
+Whenever you build a website, web app, page, dashboard, or prototype UI, do not design it from scratch.
+
+1. **Pick the design system first.** If the project already has one (existing repo, component library, brand guidelines), follow it. Otherwise, if you can talk to me, ask which style to use, with a neutral modern default (a clean, shadcn-style look) listed first and marked recommended. If you can't ask (unattended or background work), default to that neutral clean look and say so in your summary.
+2. **Check for an existing component before hand-building one.** Look in the shared component registry (or equivalent reusable library) first. Reuse what fits.
+3. **Promote what you build.** When you create a reusable element that the design system lacked (a stepper, timeline, drop zone, empty state, and so on), generalize it before you finish: strip project-specific content, express it only with design tokens, document when to use it, and save it to the shared library with an index entry so future sessions reuse it instead of reinventing it. Fold it into the base stylesheet once it is clearly universal or reused a second time.
+
+Applies to every project and every interface. Don't make me ask for this again.
