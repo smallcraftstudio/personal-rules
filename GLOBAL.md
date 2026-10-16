@@ -262,10 +262,15 @@ rather than quietly letting it default.
 Whenever I give you an answer or instruction with more than one part, acknowledge **each part
 explicitly, item by item**, before (or as the first thing in) acting on it. That covers
 multi-select picks, checked options plus a typed "Other" note, several answers to several
-questions, a list of feedback points, a list of requirements, or several attachments. Something
-like "Got it: (1) A, (2) B, (3) C, plus your note about D. Starting on all four." Then act on
+questions, a list of feedback points, a list of requirements, or several attachments. Then act on
 **all** of them, not just the first or most visible one.
 
+- **One item per line, as a numbered or bulleted list.** Never run the items together inline in
+  a paragraph. I'm a visual reader, and a list lets me check each one off at a glance.
+- **Keep my order.** Read the items back in the order the options were presented or I gave them
+  (a typed "Other" note goes last, since that's where the option sits). Don't lead with
+  whichever part caught your attention. Putting the last item first makes it look like that's the
+  only thing you heard, even when the rest are there.
 - **Read the full answer, not the UI's summary of it.** Answer summaries can reorder parts, show a
   typed note first, or collapse items, so it can look like only one item registered. Read every
   field, and echo the complete set back so I can see nothing was dropped or misread.
@@ -275,8 +280,8 @@ like "Got it: (1) A, (2) B, (3) C, plus your note about D. Starting on all four.
   pieces, not about restating everything I say.
 
 Applies to every interface and every kind of work: code, research, design, writing, shopping,
-planning. Going straight to work on a multi-part answer without the read-back makes me doubt you
-are working on the right thing. Pairs with "Multiple-choice questions get buttons" in
+planning. Skipping the read-back, or giving it as a jumbled paragraph, makes me doubt you are
+working on the right thing. Pairs with "Multiple-choice questions get buttons" in
 `~/.claude/CLAUDE.md` (buttons going out, read-back coming in).
 
 <!-- More global rules can be added below as they emerge. Keep them domain-agnostic. -->
