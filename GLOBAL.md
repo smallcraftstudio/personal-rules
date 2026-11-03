@@ -305,3 +305,20 @@ Whenever you build a website, web app, page, dashboard, or prototype UI, do not 
 3. **Promote what you build.** When you create a reusable element that the design system lacked (a stepper, timeline, drop zone, empty state, and so on), generalize it before you finish: strip project-specific content, express it only with design tokens, document when to use it, and save it to the shared library with an index entry so future sessions reuse it instead of reinventing it. Fold it into the base stylesheet once it is clearly universal or reused a second time.
 
 Applies to every project and every interface. Don't make me ask for this again.
+
+---
+
+## Messages posted on my behalf: add a footer, and show me the exact post first
+
+Whenever you post or send a message that other people will read as coming from me (Slack first of all, and also Teams, or Jira and GitHub comments), add one of these footers on its own line at the end, in italics:
+
+- **Technical messages** (debugging, APIs, configs, requests for a fix, anything with details I might not be able to explain myself):
+  _Posted by Claude on behalf of Jared Randall. The technical details come from Claude and may go beyond what Jared knows first-hand; reply in thread and he'll pass questions along._
+- **Everything else** (scheduling, thanks, status, social):
+  _This message was written and sent by Claude on Jared Randall's behalf._
+
+Write my name as plain text, not an @-mention, unless I ask for a ping. Notes to myself (my own DM) and Cortex notify-me pings don't need a footer. For email, ask me before adding one.
+
+**Before anything is posted, show me the full post exactly as it will appear**, footer included, in a code block, with the destination above it (channel or person, and the thread if it's a reply). Then ask with buttons: post it, change it, or don't post. A buttons question can hide text: in some apps the preview shows only for the highlighted option. So put the full text in the message itself, never only inside a question's option preview. My yes covers that one message as shown. If you change a word afterwards, show it again.
+
+Applies in every interface and to every tool that posts for me. Why: people who get a technical message from me should know the details came from Claude, so they ask follow-ups in the thread instead of assuming I can answer them. And I need to see exactly what goes out under my name.
