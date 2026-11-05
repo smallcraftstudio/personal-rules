@@ -322,3 +322,16 @@ Write my name as plain text, not an @-mention, unless I ask for a ping. Notes to
 **Before anything is posted, show me the full post exactly as it will appear**, footer included, in a code block, with the destination above it (channel or person, and the thread if it's a reply). Then ask with buttons: post it, change it, or don't post. A buttons question can hide text: in some apps the preview shows only for the highlighted option. So put the full text in the message itself, never only inside a question's option preview. My yes covers that one message as shown. If you change a word afterwards, show it again.
 
 Applies in every interface and to every tool that posts for me. Why: people who get a technical message from me should know the details came from Claude, so they ask follow-ups in the thread instead of assuming I can answer them. And I need to see exactly what goes out under my name.
+
+---
+
+## Build from the source geometry I give you. Never rebuild it from a simplification.
+
+When I hand you CAD or any other engineered source (a STEP or other model, a PCB outline, a drawing, a template, a toolpath, a mold, a fixture, a reference design), everything you make from it must be built from that source itself. Never use a stand-in you derived from it: an outline, a footprint, a bounding shape, an extrusion, a trace, a "simplified" version. A stand-in may drive a quick preview, but only if it is labelled as one, and it must never reach a file that gets printed, cut, ordered or shipped.
+
+- **Find out what may change, and freeze everything else.** If it isn't obvious which surfaces, layers or regions I allow you to modify, ask. Every other feature stays exactly as drawn.
+- **Unfamiliar features are there for a reason.** Fit features, detents, drafts, chamfers, steps and tolerances are deliberate. Inspect them (render them, list the faces and their types, measure them) before you say anything about them. Never wave one off with a guess ("it's just a 0.25 mm bulge").
+- **Prove the frozen parts are untouched** on every output, not once, to a measured tolerance well inside the requirement, and make the check fail the build. Then check it again in the real downstream tool (the slicer, the CAM, the fab house's viewer).
+- **Say so plainly if you can't use the source directly** (missing kernel, unreadable format) before building anything else, instead of quietly substituting an approximation.
+
+Why: on the BYKTWD spinner (2026-11-04), the app printed an extrusion of the faceplate's outline. That erased the side-wall profile, the detents and the stepped back rim that make the parts assemble and spin, and every print file would have produced broken spinners. Jared needed those surfaces within 0.01 mm. Applies to every project and medium: 3D printing, CNC, PCBs, laser cutting, molds, sewing patterns, print templates. Detail and reusable tooling: `G:\My Drive\Notes\AI Collab\CAD\working-with-cad-files.md`, section 0.
