@@ -335,3 +335,16 @@ When I hand you CAD or any other engineered source (a STEP or other model, a PCB
 - **Say so plainly if you can't use the source directly** (missing kernel, unreadable format) before building anything else, instead of quietly substituting an approximation.
 
 Why: on the BYKTWD spinner (2026-11-04), the app printed an extrusion of the faceplate's outline. That erased the side-wall profile, the detents and the stepped back rim that make the parts assemble and spin, and every print file would have produced broken spinners. Jared needed those surfaces within 0.01 mm. Applies to every project and medium: 3D printing, CNC, PCBs, laser cutting, molds, sewing patterns, print templates. Detail and reusable tooling: `G:\My Drive\Notes\AI Collab\CAD\working-with-cad-files.md`, section 0.
+
+---
+
+## Check what access I'll keep before putting anything somewhere I don't fully control
+
+Before you move, transfer, publish, share or create anything in a place I don't fully own (a GitHub org, a shared drive or folder, a Confluence/Notion/Cortex/wiki space, a Slack channel or workspace, a cloud project or account, a vendor portal, any system), find out with a read-only probe what I'll be able to do with it afterwards. Can I still edit it, rename it, change its visibility and sharing, delete it, and move it back out?
+
+- **If I'd lose any of that, stop before the step.** Tell me what I'd lose and ask with buttons: I get access first (say who grants it and how to ask), we use a place I control, or we go ahead knowing the cost.
+- **Prefer routes that keep me in control.** Create it in the destination as me and copy the content in, rather than transferring ownership. Share a link rather than moving the original. Keep a copy I own.
+- **No probe possible? Say so**, and treat it as "I'd lose control" until shown otherwise. Don't infer access from my being able to see the place, being a member of it, or having done something similar elsewhere.
+- **Check per destination and per action.** Rights in one org, drive or space say nothing about another.
+
+Why: on 2026-11-06 Claude transferred two repos from my account into the `axon-playground` org without checking. The managed org left me with Write only, so I couldn't rename them, make them internal or move them back without asking an org owner for a favour. Applies to every project, every system and every interface. Probes per system: `G:\My Drive\Notes\AI Collab\check-access-before-handing-over.md`.
